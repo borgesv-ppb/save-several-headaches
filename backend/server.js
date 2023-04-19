@@ -8,7 +8,7 @@ const port = 3000;
 app.use(cors());
 
 app.get('/run-script', (req, res) => {
-  exec('./your-script.sh', (error, stdout, stderr) => {
+  exec('./cf-script.sh', (error, stdout, stderr) => {
     if (error) {
       res.status(500).send({ error });
       return;
@@ -20,4 +20,3 @@ app.get('/run-script', (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
-
